@@ -5,6 +5,6 @@ const passport = require("passport");
 const ReportController = require("../../../../controllers/ReportController");
 const reportController = new ReportController();
 
-router.get("/", reportController.reportByStatus);
+router.get("/", passport.authenticate("jwt"), reportController.reportByStatus);
 
 module.exports = router;
