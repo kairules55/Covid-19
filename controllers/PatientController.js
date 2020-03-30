@@ -13,8 +13,7 @@ class PatientController {
         });
       }
       patient = await Patient.create({
-        phoneNo: request.body.phoneNo,
-        status: "Pending"
+        phoneNo: request.body.phoneNo
       });
       return response.json(200, {
         data: {
@@ -24,7 +23,7 @@ class PatientController {
       });
     } catch (error) {
       return response.json(500, {
-        message: "Internal Servel Error" + message
+        message: "Internal Server Error" + error
       });
     }
   }

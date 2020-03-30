@@ -7,6 +7,7 @@ const patientController = new PatientController();
 
 router.use("/doctors/", require("./doctors"));
 router.use("/patients/", require("./patients"));
-router.post("/register-patient", patientController.registerPatient);
+router.use("/reports/", require("./reports"));
+router.post("/register_patient", patientController.registerPatient);
 
 module.exports = router;

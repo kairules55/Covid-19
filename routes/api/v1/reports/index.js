@@ -4,12 +4,7 @@ const passport = require("passport");
 
 const ReportController = require("../../../../controllers/ReportController");
 const reportController = new ReportController();
-router.put(
-  "/create_report/",
-  passport.authenticate("jwt", { session: false }),
-  reportController.createReport
-);
 
-router.get("/all_reports/",reportController.allReport);
+router.get("/", reportController.reportByStatus);
 
 module.exports = router;
